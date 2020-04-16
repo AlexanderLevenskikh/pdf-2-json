@@ -15,7 +15,7 @@ export const webpackLessAntdRule = (
         postCSSConfigDirPath,
     }: IWebpackCSSRuleCreatorArgs,
 ): RuleSetRule => ({
-    test: /\.less$/,
+    test: /\.(less|css)$/,
     use: [
         webpackStyleLoader(enableMiniCSS && isProduction),
         webpackCssLoader(isProduction, 2),

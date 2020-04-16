@@ -69,16 +69,12 @@ const webpackConfig = ({ mode, wds }: IWebpackEnv): Configuration => {
         webpackLessRule({
             isProduction: isProductionMode,
             include: /src/,
+            exclude: /node_modules/,
             postCSSConfigDirPath: webpackContext,
         }),
         webpackLessAntdRule({
             isProduction: isProductionMode,
             include: /antd/,
-            postCSSConfigDirPath: webpackContext,
-        }),
-        webpackCssRule({
-            isProduction: isProductionMode,
-            include: /src|antd/,
             postCSSConfigDirPath: webpackContext,
         }),
         webpackFileRule({

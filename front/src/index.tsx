@@ -2,7 +2,7 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import 'whatwg-fetch';
 
-import 'root/general.css';
+import 'root/general.less';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppComponent } from "root/components/App";
