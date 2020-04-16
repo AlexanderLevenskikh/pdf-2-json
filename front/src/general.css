@@ -1,0 +1,12 @@
+html {
+    width:100vw;
+    overflow-x:hidden;
+}
+
+.ant-modal-footer {
+    border: none !important;
+}
+
+.ant-modal-header {
+    border: none !important;
+}

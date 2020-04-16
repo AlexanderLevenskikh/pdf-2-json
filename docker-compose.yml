@@ -1,0 +1,8 @@
+version: '3.2'
+
+services:
+  pdf-parser:
+    build:
+      context: .
+    restart: on-failure
+    network_mode: host

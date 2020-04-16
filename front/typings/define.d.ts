@@ -1,0 +1,3 @@
+// Адрес api, определяется в config.ts в корне
+declare var IS_WDS: boolean;
+declare var IS_PRODUCTION_MODE: boolean;
