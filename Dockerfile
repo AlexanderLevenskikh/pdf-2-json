@@ -1,19 +1,20 @@
-FROM nikolaik/python-nodejs:python3.8-nodejs13-alpine
+FROM node:alpine
 
 USER root
 
 WORKDIR /usr/src/app
 COPY . .
 
-WORKDIR /usr/src/app/client
-RUN npm ci --loglevel error
+WORKDIR /usr/src/app/front
+RUN apk add --no-cache --virtual .build-deps make gcc g++ python \
+ && npm install \
+ && apk del .build-deps
 RUN npm run build:prod
-RUN mkdir -p ../server/static
-RUN cp -r dist/* ../server/static
+RUN mkdir -p ../back/static
+RUN cp -r dist/* ../back/static
 
-WORKDIR /usr/src/app/server
+WORKDIR /usr/src/app/back
 RUN cp -r templates/* static
-RUN apk add --update alpine-sdk
 RUN npm ci --loglevel error
 
 RUN npm run build
