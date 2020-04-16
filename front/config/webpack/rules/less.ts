@@ -16,7 +16,7 @@ export const webpackLessRule = (
 ): RuleSetRule => ({
     test: /\.less$/,
     use: [
-        webpackStyleLoader(enableMiniCSS || isProduction),
+        webpackStyleLoader(enableMiniCSS && isProduction),
         webpackCssLoader(isProduction, 2),
         webpackPostCSSLoader(postCSSConfigDirPath),
         webpackLessLoader(),

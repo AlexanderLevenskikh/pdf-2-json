@@ -21,7 +21,7 @@ export const webpackCssRule = (
 ): RuleSetRule => ({
     test: /\.css$/,
     use: [
-        webpackStyleLoader(enableMiniCSS || isProduction),
+        webpackStyleLoader(enableMiniCSS && isProduction),
         webpackCssLoader(isProduction, 1),
         webpackPostCSSLoader(postCSSConfigDirPath),
     ],
