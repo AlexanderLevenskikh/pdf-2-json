@@ -14,7 +14,6 @@ RUN mkdir -p ../back/static
 RUN cp -r dist/* ../back/static
 
 WORKDIR /usr/src/app/back
-RUN cp -r templates/* static
 RUN npm ci --loglevel error
 
 RUN npm run build
